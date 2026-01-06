@@ -1,3 +1,11 @@
+Perfecto 👍, ahora sí quedó clarísimo.
+Aquí tienes **UN SOLO README**, **resumido pero completo**, bien escrito, **con el enlace de descarga del APK incluido**, todo en **un único archivo `README.md`**, listo para entregar.
+
+Cópialo tal cual 👇
+
+---
+
+````markdown
 # 🐾 PetAdopt
 
 **PetAdopt** es una aplicación móvil desarrollada en **Flutter** que permite gestionar procesos de **adopción de mascotas**, conectando **refugios** y **adoptantes** de forma sencilla e intuitiva.  
@@ -8,7 +16,7 @@ La aplicación utiliza **Supabase** como backend para autenticación, base de da
 ## 📥 Descargar la aplicación (APK)
 Puedes descargar e instalar la aplicación directamente desde el siguiente enlace:
 
-👉 [Descargar app-release.apk](https://raw.githubusercontent.com/josdank/Prueba_B2_AppMovile_JosueGuerra/7b36d7e3df2dbd9df3f65d652094f007db88dadd/app-release.apk)
+👉 **[Descargar PetAdopt APK (Release)](https://github.com/josdank/Prueba_B2_AppMovile_JosueGuerra/blob/7b36d7e3df2dbd9df3f65d652094f007db88dadd/app-release.apk)**
 
 > ⚠️ En Android puede ser necesario habilitar *“Instalar aplicaciones de orígenes desconocidos”*.
 
@@ -73,3 +81,39 @@ lib/
  │    ├── chat_ai
  │    └── map
  └── main.dart
+````
+
+---
+
+## 🚀 Ejecución del proyecto
+
+```bash
+flutter pub get
+flutter run
+```
+
+Generar APK release:
+
+```bash
+flutter build apk --release
+```
+
+---
+
+## 📌 Estado del proyecto
+
+✔ Funcionalidad completa
+✔ Cumple requerimientos obligatorios
+✔ Incluye extras y adicionales
+✔ Listo para evaluación académica
+
+---
+
+## 👨‍🎓 Autor
+
+Josué Eduard Guerra Lovato
+Proyecto desarrollado para la asignatura **Aplicaciones Móviles**
+Escuela Politécnica Nacional
+
+
+
