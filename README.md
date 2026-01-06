@@ -8,7 +8,7 @@ La aplicación utiliza **Supabase** como backend para autenticación, base de da
 ## 📥 Descargar la aplicación (APK)
 Puedes descargar e instalar la aplicación directamente desde el siguiente enlace:
 
-👉 **[Descargar PetAdopt APK (Release)](https://github.com/josdank/Prueba_B2_AppMovile_JosueGuerra/blob/7b36d7e3df2dbd9df3f65d652094f007db88dadd/app-release.apk)**
+👉 [Descargar app-release.apk](https://raw.githubusercontent.com/josdank/Prueba_B2_AppMovile_JosueGuerra/7b36d7e3df2dbd9df3f65d652094f007db88dadd/app-release.apk)
 
 > ⚠️ En Android puede ser necesario habilitar *“Instalar aplicaciones de orígenes desconocidos”*.
 
