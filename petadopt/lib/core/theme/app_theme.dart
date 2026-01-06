@@ -165,7 +165,7 @@ class AppTheme {
     );
   }
 
-  /// ✅ Helper opcional: AppBar con gradiente idéntico a mock
+  /// Helper opcional: AppBar con gradiente idéntico a mock
   /// Úsalo así:
   /// AppBar(flexibleSpace: AppTheme.gradientAppBarBackground(), ...)
   static Widget gradientAppBarBackground() {

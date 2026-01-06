@@ -30,4 +30,16 @@ class Env {
       double.tryParse(dotenv.env['SHELTER_B_LAT'] ?? '') ?? -0.2050;
   static double get shelterBLng =>
       double.tryParse(dotenv.env['SHELTER_B_LNG'] ?? '') ?? -78.4800;
+
+  static String get shelterCName => dotenv.env['SHELTER_C_NAME'] ?? 'Refugio C';
+  static double get shelterCLat =>
+      double.tryParse(dotenv.env['SHELTER_C_LAT'] ?? '') ?? -0.2200;
+  static double get shelterCLng =>
+      double.tryParse(dotenv.env['SHELTER_C_LNG'] ?? '') ?? -78.4950;
+
+  static String get shelterDName => dotenv.env['SHELTER_D_NAME'] ?? 'Refugio D';
+  static double get shelterDLat =>
+      double.tryParse(dotenv.env['SHELTER_D_LAT'] ?? '') ?? -0.2080;
+  static double get shelterDLng =>
+      double.tryParse(dotenv.env['SHELTER_D_LNG'] ?? '') ?? -78.4750;
 }

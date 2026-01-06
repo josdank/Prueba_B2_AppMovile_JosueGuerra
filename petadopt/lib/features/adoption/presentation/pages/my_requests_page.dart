@@ -7,17 +7,6 @@ import '../providers.dart';
 class MyRequestsPage extends ConsumerWidget {
   const MyRequestsPage({super.key});
 
-  String _labelStatus(String s) {
-    switch (s) {
-      case 'approved':
-        return 'Aprobada';
-      case 'rejected':
-        return 'Rechazada';
-      default:
-        return 'Pendiente';
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final reqAsync = ref.watch(myAdoptionRequestsProvider);
@@ -26,31 +15,34 @@ class MyRequestsPage extends ConsumerWidget {
       title: 'Mis solicitudes',
       body: reqAsync.when(
         data: (items) {
-          if (items.isEmpty) {
-            return const Center(child: Text('Aún no tienes solicitudes.'));
-          }
-
-          return ListView.separated(
-            padding: const EdgeInsets.all(12),
+          if (items.isEmpty) return const Center(child: Text('No has enviado solicitudes.'));
+          return ListView.builder(
             itemCount: items.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 10),
-            itemBuilder: (context, i) {
+            itemBuilder: (_, i) {
               final r = items[i];
-              final petName = r.petName ?? 'Mascota';
-              final breed = (r.petBreed ?? '').trim();
+
+              final petName = (r.petName ?? '').trim().isNotEmpty ? r.petName!.trim() : r.petId;
+              final petBreed = (r.petBreed ?? '').trim();
               final petStatus = (r.petStatus ?? '').trim();
-              final subtitle = <String>[
-                if (breed.isNotEmpty) 'Raza: $breed',
-                if (petStatus.isNotEmpty) 'Estado mascota: $petStatus',
-                'Solicitud: ${_labelStatus(r.status)}',
-                if (r.message.trim().isNotEmpty) 'Mensaje: ${r.message.trim()}',
-              ].join('\n');
+
+              final shelterName =
+                  (r.shelterName ?? '').trim().isNotEmpty ? r.shelterName!.trim() : r.shelterId;
+
+              final msg = r.message.trim().isEmpty ? 'Sin mensaje.' : r.message.trim();
 
               return Card(
-                child: ListTile(
-                  leading: const Icon(Icons.pets),
-                  title: Text(petName, style: const TextStyle(fontWeight: FontWeight.w700)),
-                  subtitle: Text(subtitle),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: ListTile(
+                    leading: const Icon(Icons.pets),
+                    title: Text('$petName • ${r.status}'),
+                    subtitle: Text(
+                      'Raza: ${petBreed.isEmpty ? 'N/A' : petBreed}'
+                      'Refugio: $shelterName'
+                      '${petStatus.isEmpty ? '' : 'Estado mascota: $petStatus\n'}'
+                      'Mensaje: $msg',
+                    ),
+                  ),
                 ),
               );
             },

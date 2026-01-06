@@ -173,7 +173,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
                   const SizedBox(height: 10),
                   const Text(
-                    'Nota: La confirmación de cuenta y el reset se gestionan por la web auxiliar (link en el correo).',
+                    'Nota: La confirmación de cuenta y el reset se gestionan por link enviado al correo 😺🐶.',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 12),
                   )

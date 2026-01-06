@@ -14,7 +14,9 @@ class ShelterRequestsPage extends ConsumerWidget {
 
     ref.listen(adoptionControllerProvider, (_, next) {
       next.whenOrNull(
-        error: (e, __) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e'))),
+        error: (e, __) => ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e')),
+        ),
       );
     });
 
@@ -27,6 +29,16 @@ class ShelterRequestsPage extends ConsumerWidget {
             itemCount: items.length,
             itemBuilder: (_, i) {
               final r = items[i];
+
+              // Fallbacks seguros (por si todavía no viene del backend)
+              final petName = (r.petName ?? '').trim().isNotEmpty ? r.petName!.trim() : r.petId;
+              final petBreed = (r.petBreed ?? '').trim();
+              final petLabel = petBreed.isEmpty ? petName : '$petName ($petBreed)';
+
+              final adopterName =
+                  (r.adopterName ?? '').trim().isNotEmpty ? r.adopterName!.trim() : r.adopterId;
+              final msg = (r.message).trim().isEmpty ? 'Sin mensaje.' : r.message.trim();
+
               return Card(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
@@ -34,9 +46,9 @@ class ShelterRequestsPage extends ConsumerWidget {
                     leading: const Icon(Icons.assignment),
                     title: Text('Solicitud ${r.id.substring(0, 6)} • ${r.status}'),
                     subtitle: Text(
-                      'Pet: ${r.petId}\n'
-                      'Adopter: ${r.adopterId}\n'
-                      '${r.message}',
+                      'Mascota: $petLabel\n'
+                      'Adoptador: $adopterName\n'
+                      'Mensaje: $msg',
                     ),
                     trailing: r.isPending
                         ? Row(

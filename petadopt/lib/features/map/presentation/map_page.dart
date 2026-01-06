@@ -166,7 +166,7 @@ class _MapPageState extends State<MapPage> {
                 }),
                 const SizedBox(height: 6),
                 const Text(
-                  'Tip: Si el emulador está en USA verás distancias grandes. Cambia ubicación del emulador o coords en .env.',
+                  'Tip:Dar permisos de ubicación para un mejor servicio.',
                   style: TextStyle(fontSize: 12, color: Colors.black54),
                 )
               ],

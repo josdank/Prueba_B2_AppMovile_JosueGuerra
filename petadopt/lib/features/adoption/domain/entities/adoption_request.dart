@@ -6,10 +6,12 @@ class AdoptionRequest {
   final String status; // pending/approved/rejected
   final String message;
 
-  // Extras para UI (join con pets)
+  // Extra display fields (opcionales)
   final String? petName;
   final String? petBreed;
   final String? petStatus;
+  final String? adopterName;
+  final String? shelterName;
 
   const AdoptionRequest({
     required this.id,
@@ -21,6 +23,8 @@ class AdoptionRequest {
     this.petName,
     this.petBreed,
     this.petStatus,
+    this.adopterName,
+    this.shelterName,
   });
 
   bool get isPending => status == 'pending';

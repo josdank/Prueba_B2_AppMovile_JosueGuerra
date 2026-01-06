@@ -54,7 +54,7 @@ class _CompleteProfilePageState extends ConsumerState<CompleteProfilePage> {
 
       if (!mounted) return;
 
-      // ✅ fuerza refresh del perfil
+      // fuerza refresh del perfil
       ref.invalidate(myProfileProvider);
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -79,7 +79,7 @@ class _CompleteProfilePageState extends ConsumerState<CompleteProfilePage> {
       final profile = next.valueOrNull;
       if (profile == null) return;
 
-      // ✅ Redirige según rol
+      // Redirige según rol
       if (profile.role == 'adopter') {
         Navigator.of(context).pushNamedAndRemoveUntil('/adopterHome', (r) => false);
       } else if (profile.role == 'shelter') {
